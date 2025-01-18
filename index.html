@@ -12,11 +12,12 @@
     <title>Streamly</title>
 </head>
 <body>
+
     <section id="sidebar">
-       <figure style="color:white"><div id="logo"> </div></figure>
+       <figure style="color:white"><div id="logo"></div></figure>
        <div class="sidebarBtnContainer">
-        <button class="sidebarBtn" id="primeBtn"><i class="fa-solid fa-house sidebarIcon"></i><div>Home</div></button>
         <button class="sidebarBtn"  id="accountBtn"><i class="fa-solid fa-circle-user sidebarIcon"></i><div>Account</div></button>
+        <button class="sidebarBtn" id="primeBtn"><i class="fa-solid fa-house sidebarIcon"></i><div>Home</div></button>
         <button class="sidebarBtn"  id="savedBtn"><i class="fa-regular fa-bookmark sidebarIcon"></i><div>Saved</div></button>
         <button class="sidebarBtn"  id="downloadsBtn"><i class="fa-solid fa-download sidebarIcon"></i><div>Downloads</div></button>
         <button class="sidebarBtn"  id="appearanceBtn" onclick="toggleMode()"><i class="fa-solid fa-moon sidebarIcon"></i><div>Appearance</div></button>
@@ -25,7 +26,7 @@
     <content>
        <section id="searchbarCreateSection"> 
            <section id="searchbarSection">
-               <input type="text" placeholder="Search for videos">
+               <input type="text" id="searchInput" placeholder="Search for videos">
                <button>
                    <i class="fa-solid fa-magnifying-glass"></i>
                </button>

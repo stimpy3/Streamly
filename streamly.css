@@ -8,8 +8,8 @@
 
 :root {
     --darkerAccent: black;
-    --lighterAccent:#080808;
-    --border:#1b1b1b;
+    --lighterAccent:#101010;
+    --border:#3a3a3a;
     --lightPurple:#c800ff;
     --darkPurple:#d000ff20;
     --pink:#cd4092;
@@ -20,15 +20,16 @@
   }
 
 .lightTheme{
-    --darkerAccent: rgb(248, 246, 243);
-    --lighterAccent: #fffdf9;
-    --border: #cccccc;
+    --darkerAccent: #f0ece8;
+    --lighterAccent: white;
+    --border: #c8c8c8;
     --lightPurple:#c800ff;
-    --darkPurple:#d000ff20;
+    --darkPurple:#d5a4e093;
     --pink:#cd4092;
     --text:#636363;
     --shadowHintPurple:#754d9867;
   }
+
 
 
 body{
@@ -54,6 +55,8 @@ body::-webkit-scrollbar {
   }
 
 #sidebar{
+    padding: 20px 0px 40px 0px;
+    border: none;
     min-width: var(--sideBarWidthPix);
     position: fixed;
     z-index: 2;
@@ -63,13 +66,13 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    box-shadow: 0px 0px 15px var(--shadowHintPurple);
+    justify-content: space-between;
+    
 }
 
 .sidebarBtn{
     color: var(--text);
-    background-color: var(--darkerAccent);
+    background-color: transparent;
     font-size: 0.6rem;
     font-family: "Ubuntu", serif;
     border: none;
@@ -101,6 +104,27 @@ figure{
     background-repeat: no-repeat;
     background-size: contain;
 }
+#logo:hover{
+    animation: shake 0.6s ease;
+}
+
+@keyframes shake{
+    0%{
+      transform:rotate(0deg);
+     }
+    25%{
+      transform:rotate(15deg);
+    }
+    50%{
+      transform:rotate(-15deg);
+    }
+    75%{
+      transform:rotate(15deg);
+    }
+    100%{
+      transform:rotate(0deg);
+    }
+  }
 
 .sidebarBtnContainer{
     display: flex;
@@ -150,7 +174,7 @@ content{
     overflow: hidden;
 }
 
-#searchbarSection input{
+#searchInput{
     height: 100%;
     width: 90%;
     outline: none;
@@ -162,6 +186,10 @@ content{
     background-color: var(--darkerAccent);
     color: white;
 }
+  
+  
+
+
 
 #searchbarSection button{
     height: 100%;
@@ -185,7 +213,11 @@ content{
     padding:0px 10px;
     border: none;
     box-shadow:0px 0px 20px #ffffff55;
+    border: 1.5px solid #cccccc;
+    transition: 2s ease;
 }
+
+
 
 #adboardSection{
     display: flex;
@@ -197,6 +229,7 @@ content{
 
 
 #adboardOuter{
+    border: 1.5px solid #3a3a3a;
     display: flex;
     justify-content: center;
     border-radius: 25px 25px 25px 25px;
@@ -221,12 +254,14 @@ content{
 #filter{
  display: flex;
  align-items: center;
- padding: 0px 0px 0px 0px;
+ padding: 40px 0px 40px 0px;
  width: 95%;
- margin-top: 40px;
+ margin-top: 20px;
  margin-bottom: 20px;
  height: 60px;
  background-color: var(--lighterAccent);
+ border-top: 2px dotted var(--border);
+ border-bottom: 2px dotted var(--border);
 }
 
 #filter button{
@@ -235,10 +270,14 @@ content{
     padding: 10px;
     background-color: var(--darkPurple);
     border-radius: 5px;
-    border: none;
+    border:  1.5px solid transparent;
     box-shadow: 0px 0px 15px rgba(117, 77, 152, 0.404);
     color: var(--lightPurple);
+    transition: border-color 0.4s ease;
 
+}
+#filter button:hover{
+    border: 1.5px solid var(--lightPurple);
 }
 
 #mainVideoContainer{

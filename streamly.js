@@ -1,4 +1,25 @@
 
+const createBtn=document.querySelector('#createBtn'); 
+
+createBtn.addEventListener('mouseenter', () => {
+  createBtn.innerHTML='<i class="fa-solid fa-video"></i> Video'; 
+});
+
+createBtn.addEventListener('mouseleave', () => {
+ 
+  createBtn.innerHTML='<i class="fa-solid fa-plus"></i> Create'; 
+});
+
+
+
+
+ logo.addEventListener("click",reload);
+ function reload(){
+   window.location.reload();
+ }
+
+
+ 
  vidNum=0;
  addVideo=()=>{
    console.log("add"); 
@@ -14,6 +35,18 @@
        </section>
    </article>`;
   };
+
+
+
+const searchInput=document.querySelector('#searchInput');
+const placeholders=["Search Fortnite", "Search Hawk Tuah", "Search Skibidi"];
+let currentIndex=0;
+function changePlaceholder(){
+  searchInput.placeholder=placeholders[currentIndex];
+  currentIndex=(currentIndex+1)%placeholders.length;
+}
+setInterval(changePlaceholder, 2000);
+
 
  currentMode="dark";
  toggleMode=()=>{
