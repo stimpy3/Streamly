@@ -1,3 +1,4 @@
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -256,3 +257,239 @@ content{
  height: 400px;
 }
 
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family: "Ubuntu", serif;
+}
+
+:root {
+    --black: black;
+    --lightBlack:#080808;
+    --border:#4a4a4a;
+    --pink:#ff2877;
+    --darkPink:#2d1020;
+    --yellow:#ffdd00;
+    --text:white;
+  }
+
+.lightTheme{
+    --black: rgb(248, 246, 243);
+    --lightBlack: #fffdf9;
+    --border: #cccccc;
+    --pink:#ff4d8e;
+    --darkPink:#f3c7df;
+    --yellow:#ffdd00;
+    --text:rgb(129, 129, 129);
+  }
+
+
+body{
+    height: fit-content;
+    width:100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--lightBlack);
+    display: flex;
+   
+}
+
+#sidebar{
+    min-width: 90px;
+    position: fixed;
+    z-index: 2;
+    height: 100vh;
+    width: 10%;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+.sidebarBtn{
+    color: var(--text);
+    background-color: var(--black);
+    font-size: 0.8rem;
+    font-family: "Ubuntu", serif;
+    border: none;
+    width: 80%;
+    height: 60px;
+    padding:5px 0px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+    margin-top: 20px;
+}
+
+.sidebarBtn:hover{
+    opacity: 1;
+    background-color: var(--lightBlack);
+}
+figure{
+    width: 100%;
+    height:90px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#logo{
+    width: 90%;
+    height: 100%;
+    background-image: url("images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.sidebarBtnContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:fit-content
+}
+.sidebarIcon{
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+}
+
+content{
+    min-width: 800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10%;
+    width: 90%;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+#searchbarCreateSection{
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    position: fixed;
+    display: flex; 
+    height: 80px;
+    width: fit-content;
+    background-color: var(--lightBlack);
+    border-radius: 0px 0px 25px 25px;
+    padding:20px;
+}
+
+#searchbarSection{
+    display: flex;
+    width: 450px;
+    height: 40px;
+    background-color: var(--lightBlack);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#searchbarSection input{
+    height: 100%;
+    width: 90%;
+    outline: none;
+    font-family: "Ubuntu", serif;
+    background-color: transparent;
+    border: none;
+    padding: 0px 10px;
+    font-size: 1rem;
+    background-color: var(--black);
+    color: white;
+}
+
+#searchbarSection button{
+    height: 100%;
+    width: 10%;
+    background-color: var(--darkPink);
+    border: none;
+    color: var(--pink);
+    padding: 0px 10px;
+    font-size: 1rem;
+}
+
+#createBtn{
+    height: 100%;
+    background-image: linear-gradient(to right,var(--yellow),var(--pink));
+    color:white;
+    margin-left: 30px;
+    font-family: "Ubuntu", serif;
+    font-size: 1rem;
+    border-radius: 20px;
+    padding:0px 10px;
+    border: none;
+    box-shadow:0px 0px 20px #ffffff55;
+}
+
+#adboardSection{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color:var(--lightBlack);
+    height: 500px;
+}
+
+
+#adboardOuter{
+    display: flex;
+    justify-content: center;
+    border-radius: 25px 25px 25px 25px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(129, 129, 129); 
+    background-image: url("images/advertise1.png");  
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#adboardSection{
+    width: 100%;
+    padding: 40px 40px 0px 20px;
+    height: 500px;
+    background-color: var(--lightBlack);
+}
+
+#filter{
+ display: flex;
+ align-items: center;
+ padding: 0px 40px 0px 20px;
+ margin-top: 20px;
+ width: 100%;
+ height: 60px;
+ background-color: var(--lightBlack);
+}
+
+#filter button{
+    font-size: 1.2rem;
+    margin-right: 30px;
+    padding: 10px;
+    background-color: var(--darkPink);
+    border-radius: 5px;
+    border: none;
+    color: var(--pink);
+
+}
+
+#mainVideoContainer{
+    width: 100%;
+    padding: 20px 40px 0px 20px;
+    height:fit-content;min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;  
+    background-color: transparent;
+}
+
+
+.newVideo{
+ background-color: white;
+ height: 400px;
+}
