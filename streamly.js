@@ -48,6 +48,7 @@ function changePlaceholder(){
 setInterval(changePlaceholder, 2000);
 
 
+const appearanceBtn=document.querySelector("#appearanceBtn");
  currentMode="dark";
  toggleMode=()=>{
     const root=document.documentElement; //used this to select html
@@ -55,11 +56,14 @@ setInterval(changePlaceholder, 2000);
    if(currentMode=="dark"){
     currentMode="light";
      root.classList.add("lightTheme");
+     appearanceBtn.innerHTML=`<i class="fa-solid fa-sun sidebarIcon"></i><div class="ab">Appearance</div>`;
      console.log(currentMode);
    }
    else if(currentMode=="light"){
     currentMode="dark";
     root.classList.remove("lightTheme");
+    appearanceBtn.innerHTML=`<i class="fa-solid fa-moon sidebarIcon"></i><div class="ab">Appearance</div>`;
+
     console.log(currentMode);
    }
 }

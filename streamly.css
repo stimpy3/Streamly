@@ -15,7 +15,7 @@
     --pink:#cd4092;
     --text:white;
     --sideBarWidthPer:6%;
-    --sideBarWidthPix:60px;
+    --sideBarWidthPix:70px;
     --shadowHintPurple:#754d9806;
   }
 
@@ -76,14 +76,14 @@ body::-webkit-scrollbar {
     font-size: 0.6rem;
     font-family: "Ubuntu", serif;
     border: none;
-    width: 80%;
+    width: 90%;
     height: 60px;
     padding:5px 0px;
     border-radius: 10px;
     transition: background-color 0.2s ease;
     margin-top: 20px;
 }
-
+.ab{font-size: 0.6rem;}
 #primeBtn{
 background-color: var(--lighterAccent);
 border-radius: 10px 0px 0px 10px;
@@ -271,7 +271,6 @@ content{
     background-color: var(--darkPurple);
     border-radius: 5px;
     border:  1.5px solid transparent;
-    box-shadow: 0px 0px 15px rgba(117, 77, 152, 0.404);
     color: var(--lightPurple);
     transition: border-color 0.4s ease;
 
@@ -294,12 +293,4 @@ content{
 .newVideo{
  background-color: white;
  height: 400px;
-}
-
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family: "Ubuntu", serif;
 }
