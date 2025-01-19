@@ -33,6 +33,7 @@
 
 
 body{
+    transition: 0.5s ease;
     height: fit-content;
     width:100vw;
     min-height: 100vh;
@@ -56,7 +57,6 @@ body::-webkit-scrollbar {
 
 #sidebar{
     padding: 20px 0px 40px 0px;
-    border: none;
     min-width: var(--sideBarWidthPix);
     position: fixed;
     z-index: 2;
@@ -85,6 +85,9 @@ body::-webkit-scrollbar {
 }
 .ab{font-size: 0.6rem;}
 #primeBtn{
+border: 1px solid var(--border);
+border-right: 1px solid var(--lighterAccent);
+
 background-color: var(--lighterAccent);
 border-radius: 10px 0px 0px 10px;
 }
@@ -98,7 +101,8 @@ figure{
 }
 
 #logo{
-    width: 90%;
+    margin-right: 5px;
+    width: 80%;
     height: 100%;
     background-image: url("images/logo.png");
     background-repeat: no-repeat;
@@ -161,6 +165,7 @@ content{
     width: fit-content;
     background-color: var(--lighterAccent);
     border-radius: 0px 0px 25px 25px;
+    border: 1px solid var(--border);
     padding:20px;
 }
 
@@ -169,7 +174,7 @@ content{
     width: 450px;
     height: 40px;
     background-color: var(--lighterAccent);
-    border: 1.5px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -213,23 +218,13 @@ content{
     padding:0px 10px;
     border: none;
     box-shadow:0px 0px 20px #ffffff55;
-    border: 1.5px solid #cccccc;
+    border: 1px solid #cccccc;
     transition: 2s ease;
 }
 
 
-
-#adboardSection{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color:var(--lighterAccent);
-    height: 500px;
-}
-
-
 #adboardOuter{
-    border: 1.5px solid #3a3a3a;
+    border: none;
     display: flex;
     justify-content: center;
     border-radius: 25px 25px 25px 25px;
@@ -248,7 +243,7 @@ content{
     width: 95%;
     padding: 20px 0px 0px 0px;
     height: 300px;
-    background-color: var(--lighterAccent);
+    background-color: transparent;
 }
 
 #filter{
@@ -259,7 +254,7 @@ content{
  margin-top: 20px;
  margin-bottom: 20px;
  height: 60px;
- background-color: var(--lighterAccent);
+ background-color: transparent;
  border-top: 2px dotted var(--border);
  border-bottom: 2px dotted var(--border);
 }
