@@ -1,0 +1,161 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+.backgroundImage {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('background.jpg');
+    background-color: #232323;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+}
+
+.loginSide {
+    box-shadow: 0px 0px 12px 5px #3232327c;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+}
+
+.loginRegisterTitle {
+   
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+    width: 100%;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    justify-content: center;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.inputGroup input{
+    outline:none;
+    background-color: #151515;
+}
+
+.inputGroup label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.inputGroup input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #424242;
+}
+
+.registerlogin{
+    background-color: blueviolet;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.registerlogin a {
+    text-decoration: none;
+    
+}
+
+.registerLink {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.googleIcon{
+    width:20px;
+    height:20px;
+    background-image: url("images/googleIcon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.googleButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #424242;
+    margin-bottom: 10px;
+}
+.googleButton p{
+    padding-left: 10px;
+    width: fit-content;
+    font-size: 1.2rem;
+}
+
+.or{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #a5a5a5;
+    margin:10px 0px 26px 0px;
+}
+.line{
+    display: inline-block;
+    background-color: #a5a5a5;
+    height: 1px;
+    flex:1;
+}
+
+/* #logo{
+    position: absolute;
+    background-color: #531398;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall 5s ease-in-out forwards infinite;
+} */
+
+@keyframes fall{
+    0% {
+    
+    }
+    
+    50%{
+       
+    }
+  }
