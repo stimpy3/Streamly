@@ -33,7 +33,7 @@ body {
 #logoContainer{
  width: 60%;
  height: fit-content;
- animation: appear 2s ease-out;
+ animation: appear 1.5s ease-out;
 }
 
 
