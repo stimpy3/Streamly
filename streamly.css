@@ -181,6 +181,7 @@ content{
 }
 
 #searchInput{
+    font-weight: 400;
     height: 100%;
     width: 90%;
     outline: none;
@@ -208,8 +209,14 @@ content{
 }
 
 
+#searchbarSection button:hover{
+background-color: var(--lightPurple);
+    color: var(--lighterAccent);
+}
+
 #createBtn{
     height: 100%;
+    font-weight: 900;
     background-image: linear-gradient(to right,var(--violet),var(--lightPurple));
     color:white;
     margin-left: 30px;
@@ -261,6 +268,7 @@ content{
 }
 
 #filter button{
+    font-weight: 900;
     font-size: 0.9rem;
     margin-right: 30px;
     padding: 10px;
@@ -270,7 +278,7 @@ content{
     color: var(--lightPurple);
     transition: border-color 0.4s ease;
     box-shadow:0px 0px 10px #513e5f55;
-    border: 1px solid #3b1d60;
+    border: 1px solid #55268e;
     transition: background-color 0.3s ease;
 }
 #filter button:hover{

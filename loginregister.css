@@ -47,7 +47,8 @@ body {
 }
 
 .loginSide {
-    background-color: transparent;
+    background-color: rgba(103, 103, 103, 0.073);
+    backdrop-filter: blur(90px);
     display: flex;
     align-items: center;
     justify-content: center;

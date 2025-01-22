@@ -15,7 +15,7 @@ createBtn.addEventListener('mouseleave', () => {
 
  logo.addEventListener("click",reload);
  function reload(){
-   window.location.reload();
+   window.scrollTo({ top: 0, behavior:'smooth' });
  }
 
 
