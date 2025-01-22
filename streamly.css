@@ -31,6 +31,9 @@
   }
 
 
+  a{
+    color: var(--lightPurple);
+}
 
 body{
     transition: 0.5s ease;
