@@ -11,7 +11,9 @@
 </head>
 <body>
     <div class="backgroundImage">
-        <div id="logo"></div>
+        <div id="logoContainer">
+            <div id="logo"></div>
+        </div>
     </div>
     <div class="loginSide">
         <p class="loginRegisterTitle">Register</p>
@@ -37,10 +39,12 @@
                 <div class="googleButton">
                     <div class="googleIcon"></div><p>Continue with Google</p>
                 </div>
-                
-                <button type="submit" class="registerlogin">
-                    <a href="home.html">REGISTER</a>
+              
+                <button type="button" class="registerlogin" onclick="location.href='home.html'">
+                    REGISTER
                 </button>
+                
+                
                 <p class="registerLink">Already have an account? <a href="login.html">login</a></p>
             </form>
         </div>

@@ -7,11 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap" rel="stylesheet">
     <title>Login-Streamly</title>
 </head>
 <body>
     <div class="backgroundImage">
-        <div id="logo"></div>
+        <div id="logoContainer">
+            <div id="logo"></div>
+        </div>
     </div>
     <div class="loginSide">
         <p class="loginRegisterTitle">Login</p>
@@ -25,12 +30,13 @@
                     <label for="password">Password</label>
                     <input id="password" type="password">
                 </div>
-                <button type="submit" class="registerlogin">
-                    <a href="home.html">LOGIN</a>
+                <button type="button" class="registerlogin" onclick="location.href='home.html'">
+                    REGISTER
                 </button>
                 <p class="registerLink">Don't have an account? <a href="index.html">Register</a></p>
             </form>
         </div>
     </div>
+
 </body>
 </html>

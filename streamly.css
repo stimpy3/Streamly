@@ -10,9 +10,9 @@
     --darkerAccent: black;
     --lighterAccent:#101010;
     --border:#3a3a3a;
-    --lightPurple:#c800ff;
-    --darkPurple:#d000ff20;
-    --pink:#cd4092;
+    --lightPurple:#9900ff;
+    --darkPurple:#9500ff20;
+    --violet:#7f40cd;
     --text:white;
     --sideBarWidthPer:6%;
     --sideBarWidthPix:70px;
@@ -23,9 +23,9 @@
     --darkerAccent: #f0ece8;
     --lighterAccent: white;
     --border: #c8c8c8;
-    --lightPurple:#c800ff;
-    --darkPurple:#d5a4e093;
-    --pink:#cd4092;
+    --lightPurple:#9900ff;
+    --darkPurple:#c6a4e093;
+    --violet:#7f40cd;
     --text:#636363;
     --shadowHintPurple:#754d9867;
   }
@@ -210,7 +210,7 @@ content{
 
 #createBtn{
     height: 100%;
-    background-image: linear-gradient(to right,var(--pink),var(--lightPurple));
+    background-image: linear-gradient(to right,var(--violet),var(--lightPurple));
     color:white;
     margin-left: 30px;
     font-family: "Ubuntu", serif;
@@ -219,7 +219,7 @@ content{
     padding:0px 10px;
     border: none;
     box-shadow:0px 0px 20px #ffffff55;
-    border: 1px solid #cccccc;
+    border: 1px solid var(--darkPurple);
     transition: 2s ease;
 }
 
@@ -232,7 +232,8 @@ content{
     width: 100%;
     height: 100%;
     background-color: rgb(129, 129, 129); 
-    background-image: url("images/advertise1.png");  
+    background-image: url("images/advertise1.png"); 
+    
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0px 0px 15px var(--shadowHintPurple);
@@ -268,10 +269,13 @@ content{
     border:  1.5px solid transparent;
     color: var(--lightPurple);
     transition: border-color 0.4s ease;
-
+    box-shadow:0px 0px 10px #513e5f55;
+    border: 1px solid #3b1d60;
+    transition: background-color 0.3s ease;
 }
 #filter button:hover{
-    border: 1.5px solid var(--lightPurple);
+    background-color: var(--lightPurple);
+    color: var(--lighterAccent);
 }
 
 #mainVideoContainer{

@@ -11,7 +11,13 @@ body {
     padding: 0;
     margin: 0;
     overflow-y: hidden;
+    background-color: black;
+    background-image: radial-gradient(circle at -90% -100%, #803fb8, black 90%);
+    animation: pulse 3s infinite ease-in-out;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 .backgroundImage {
     overflow: hidden;
@@ -19,17 +25,29 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url('background.jpg');
-    background-color: #232323;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: transparent; 
     width: 50%;
     height: 100vh;
 }
 
+#logoContainer{
+ width: 60%;
+ height: fit-content;
+ animation: appear 2s ease-out;
+}
+
+
+#logo{
+    background-image: url(images/logo.png);
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 186/149;
+    animation: bounce 3s infinite ease-in-out;
+}
+
 .loginSide {
-    box-shadow: 0px 0px 12px 5px #3232327c;
-    background-color: black;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,7 +85,7 @@ body {
 
 .inputGroup input{
     outline:none;
-    background-color: #151515;
+    background-color: #1515152a;
 }
 
 .inputGroup label {
@@ -150,12 +168,36 @@ body {
     animation: fall 5s ease-in-out forwards infinite;
 } */
 
-@keyframes fall{
-    0% {
-    
-    }
-    
-    50%{
-       
+@keyframes appear{
+    0%{
+      transform:translateY(-500px) scale(0) rotate(-180deg);
+      
+     }
+    100%{
+      transform:translateY(0px) scale(1) rotate(-360deg);
     }
   }
+
+  @keyframes pulse {
+    0% {
+        background-size: 100% 100%;
+    }
+    50% {
+        background-size: 100% 300%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes bounce{
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
