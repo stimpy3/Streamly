@@ -55,7 +55,7 @@ body {
 
 #logo{
     background-image: url(images/logo.png);
-    width: 100%;
+    width: 80%;
     background-size: contain;
     background-repeat: no-repeat;
     aspect-ratio: 186/149;

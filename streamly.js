@@ -18,8 +18,25 @@ createBtn.addEventListener('mouseleave', () => {
    window.scrollTo({ top: 0, behavior:'smooth' });
  }
 
+views=4280;
+if(views>999 && views<=999999){viewsString=((views/1000).toFixed(1))+"k";} //toFixed method return a string
+else if(views>=999999){
+  viewsString=(views/1000000)+"M";
+}
+//IMPORTANT
+// Store a reference to the videoUploadContainer before removing it IMPORTANT
+/*once you remove the element from the DOM, the reference to that element will be lost. 
+This means document.querySelector("#videoUploadContainer") will return null after
+ the element is removed, and attempting to append it again will fail. */
+const videoUploadContainer = document.querySelector("#videoUploadContainer");
+//Returns the number of pixels the document has been scrolled vertically from the top of the viewport.
+videoUploadContainer.remove();//removed element from DOM
+function showOverlay(){
+  document.body.style.overflow="hidden";
+  document.body.appendChild(videoUploadContainer);
+  videoUploadContainer.style.top=`${window.scrollY}px`;
+}
 
- 
  vidNum=0;
  addVideo=()=>{
    console.log("add"); 
@@ -30,7 +47,7 @@ createBtn.addEventListener('mouseleave', () => {
       </div>
        <section style="color:var(--text);  padding: 10px 15px;height: 25%;"><p><i class="fa-solid fa-circle-user"></i>&nbsp;Video description</p>
        <div style="display:flex; justify-content:space-between;margin-top:7px;">
-      <p style="color:var(--text); width:fit-content;">Channel name</p> <p style="color:var(--lightPurple); width:fit-content;">420k Views</p>
+      <p style="color:var(--text); width:fit-content;">Channel name</p> <p style="color:var(--lightPurple); width:fit-content;">${viewsString} Views</p>
        </div>
        </section>
    </article>`;
