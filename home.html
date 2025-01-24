@@ -1,65 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="streamly.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="images/logo.png" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <title>Streamly</title>
 </head>
+
 <body>
 
     <section id="sidebar">
-       <figure style="color:white"><div id="logo"></div></figure>
-       <div class="sidebarBtnContainer">
-        <button class="sidebarBtn"  id="accountBtn"><i class="fa-solid fa-circle-user sidebarIcon"></i><div>Account</div></button>
-        <button class="sidebarBtn" id="primeBtn"><i class="fa-solid fa-house sidebarIcon"></i><div>Home</div></button>
-        <button class="sidebarBtn"  id="savedBtn"><i class="fa-regular fa-bookmark sidebarIcon"></i><div>Saved</div></button>
-        <button class="sidebarBtn"  id="downloadsBtn"><i class="fa-solid fa-download sidebarIcon"></i><div>Downloads</div></button>
-        <button class="sidebarBtn"  id="appearanceBtn" onclick="toggleMode()"><i class="fa-solid fa-moon sidebarIcon"></i><div>Appearance</div></button>
+        <figure style="color:white">
+            <div id="logo"></div>
+        </figure>
+        <div class="sidebarBtnContainer">
+
+            <button class="sidebarBtn" id="accountBtn"><i class="fa-solid fa-circle-user sidebarIcon"></i>
+                <div>Account</div>
+            </button>
+            <button class="sidebarBtn" id="primeBtn"><i class="fa-solid fa-house sidebarIcon"></i>
+                <div>Home</div>
+            </button>
+            <button class="sidebarBtn" id="savedBtn"><i class="fa-regular fa-bookmark sidebarIcon"></i>
+                <div>Saved</div>
+            </button>
+            <button class="sidebarBtn" id="downloadsBtn"><i class="fa-solid fa-download sidebarIcon"></i>
+                <div>Downloads</div>
+            </button>
+            <button class="sidebarBtn" id="appearanceBtn" onclick="toggleMode()"><i
+                    class="fa-solid fa-moon sidebarIcon"></i>
+                <div>Appearance</div>
+            </button>
+
+        </div>
     </section>
 
     <content>
-       <section id="searchbarCreateSection"> 
-           <section id="searchbarSection">
-               <input type="text" id="searchInput" placeholder="Search for videos">
-               <button>
-                   <i class="fa-solid fa-magnifying-glass"></i>
-               </button>
-           </section>
+        <section id="searchbarCreateSection">
+            <section id="searchbarSection">
+                <input type="text" id="searchInput" placeholder="Search for videos">
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </section>
 
-           <button id="createBtn" onclick="showOverlay()"><i class="fa-solid fa-plus"></i> Create</button>
-       </section>
+            <button id="createBtn" onclick="showOverlay()"><i class="fa-solid fa-plus"></i> Create</button>
+        </section>
 
-       <section id="adboardSection">
-         <div id="adboardOuter">
-         </div>
-       </section>
+        <section id="adboardSection">
+            <div id="adboardOuter">
+            </div>
+        </section>
 
-       <section id="filter">
-         <button>Music</button>
-         <button>Gaming</button>
-         <button>Education</button>
-         <button>Sports</button>
-         <button>News</button>
-         <button>Comedy</button>
-         <button>Nature</button>
-         <button>Self-Help</button>
-       </section>
+        <section id="filter">
+            <button>Music</button>
+            <button>Gaming</button>
+            <button>Education</button>
+            <button>Sports</button>
+            <button>News</button>
+            <button>Comedy</button>
+            <button>Nature</button>
+            <button>Self-Help</button>
+        </section>
 
-       <section id="mainVideoContainer">
-               
-       </section>
+        <section id="mainVideoContainer">
 
-       <section id="videoUploadContainer">
-          <section id="videoUploadScreen"></section>
-       </section>
+        </section>
+
+        <section id="videoUploadContainer">
+            <section id="videoUploadScreen">
+                <section id="uploadTopbar">
+                    <p>Upload Videos</p>
+                    <button id="closeBtn" onclick="removeOverlay()"><i class="fa-solid fa-x"></i></button>
+                </section>
+
+                <section id="bottomPart">
+
+                <section id="uploadDescriptionContainer">
+                    <div id="uploadRegion">
+                        <i class="fa-solid fa-up-long"></i>
+                    </div>
+                    <div id="instructionUploadContainer">
+                        <p>Drag and drop video files to upload</p>
+                        <button id="selectFilesBtn" onclick="selectFile()">Select
+                            file</button>
+                    </div>
+                </section>
+
+                <section id="videoDescriptionContainer">
+                   <div class="descriptionInputContainer">
+                     <label>Video Title</label>
+                     <input type="textarea" id="videoTitleInputTag" class="videoInput">
+                   </div>
+
+                   <div class="descriptionInputContainer" class="videoInput">
+                    <label>Video Description</label>
+                    <input type="textarea" id="videoDescription">
+                  </div>
+                </section>
+
+               </section>
+
+            </section>
+        </section>
+
+        </section>
     </content>
-<script src="streamly.js"></script>
+    <script src="streamly.js"></script>
 </body>
-
