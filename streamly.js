@@ -16,15 +16,6 @@ const videoSource = document.querySelector("#videoSource");
 
 
 
-createBtn.addEventListener('mouseenter', () => {
-    createBtn.innerHTML = '<i class="fa-solid fa-video"></i> Video';
-});
-
-createBtn.addEventListener('mouseleave', () => {
-
-    createBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Create';
-});
-
 
 
 //scroll to top on logo click
@@ -104,9 +95,9 @@ vidNum=0;
 
 function addVideo(){
     videoTitle=videoTitleInputTag.value;
-    document.querySelector("#mainVideoContainer").innerHTML += `<article style=" box-shadow: 0px 0px 15px var(--shadowHintPurple);border-radius:10px; overflow:hidden;background-color: var(--darkerAccent); height: 300px; min-width:400px;"
+    document.querySelector("#mainVideoContainer").innerHTML += `<article style=" box-shadow: 0px 0px 15px var(--shadowHintPurple);border-radius:10px; overflow:hidden;background-color: var(--darkerAccent); height: 300px; min-width:200px;"
     id="${vidNum}" class="videoContainer">
-       <video id="videoPlayer${vidNum}" width="640" height="360" controls style="width: 100%; height: 75%; background-color: var(--border);">
+       <video id="videoPlayer${vidNum}" width="640" height="360" controls style="width: 100%; height: 75%; background-color: #3a3a3a6c;">
            <source id="videoSource${vidNum}" src="${videoURL}" type="video/mp4">
       </video>
        <section style="color:var(--text);  padding: 10px 15px;height: 25%;"><p><i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;${videoTitle}</p>

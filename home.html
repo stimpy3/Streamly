@@ -19,12 +19,16 @@
 
 <body>
 
-    <section id="sidebar">
+    <section id="sidebarSection">
+        <div id="sidebarInner">
         <figure style="color:white">
             <div id="logo"></div>
         </figure>
+        <section class="sidebarRemContainer">
         <div class="sidebarBtnContainer">
-
+            <button class="sidebarBtn" id="createBtn" onclick="showOverlay()"><i class="fa-solid fa-video sidebarIcon"></i> 
+                <div>Upload</div>
+            </button>
             <button class="sidebarBtn" id="accountBtn"><i class="fa-solid fa-circle-user sidebarIcon"></i>
                 <div>Account</div>
             </button>
@@ -34,18 +38,18 @@
             <button class="sidebarBtn" id="savedBtn"><i class="fa-regular fa-bookmark sidebarIcon"></i>
                 <div>Saved</div>
             </button>
-            <button class="sidebarBtn" id="downloadsBtn"><i class="fa-solid fa-download sidebarIcon"></i>
-                <div>Downloads</div>
-            </button>
+            
             <button class="sidebarBtn" id="appearanceBtn" onclick="toggleMode()"><i
                     class="fa-solid fa-moon sidebarIcon"></i>
-                <div>Appearance</div>
+                <div>Lighting</div>
             </button>
-
         </div>
+        </section>
+      </div>
     </section>
 
     <content>
+        <section id="innerContent">
         <section id="searchbarCreateSection">
             <section id="searchbarSection">
                 <input type="text" id="searchInput" placeholder="Search for videos">
@@ -54,15 +58,18 @@
                 </button>
             </section>
 
-            <button id="createBtn" onclick="showOverlay()"><i class="fa-solid fa-plus"></i> Create</button>
+            
         </section>
 
         <section id="adboardSection">
+        <div id="blurOverlay">
             <div id="adboardOuter">
             </div>
+        </div>
         </section>
 
-        <section id="filter">
+        <!-- <section id="filter">
+
             <button>Music</button>
             <button>Gaming</button>
             <button>Education</button>
@@ -71,7 +78,7 @@
             <button>Comedy</button>
             <button>Nature</button>
             <button>Self-Help</button>
-        </section>
+        </section> -->
 
         <section id="mainVideoContainer">
 
@@ -118,6 +125,7 @@
             </section>
         </section>
 
+        </section>
         </section>
     </content>
     <script src="streamly.js"></script>

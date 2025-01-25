@@ -6,22 +6,23 @@
 }
 
 :root {
+    --lighterAccent: #1e1e1e;
     --darkerAccent: black;
-    --lighterAccent: #101010;
-    --evenLighterAccent:#232323;
+    --evendarkerAccent:#232323;
+    --evenEvendarkerAccent:#2d2d2d;
     --border: #3a3a3a;
     --lightPurple: #9900ff;
-    --darkPurple: #9500ff20;
+    --darkPurple: #35174a;
     --violet: #7f40cd;
     --text: white;
-    --sideBarWidthPer: 6%;
-    --sideBarWidthPix: 70px;
+   --unselectedText:#a4a4a4;
+    --sideBarWidthPix: 80px;
     --shadowHintPurple: #754d9806;
 }
 
 .lightTheme {
-    --darkerAccent: #f0ece8;
-    --lighterAccent: white;
+    --lighterAccent: #f0ece8;
+    --darkerAccent: white;
     --border: #c8c8c8;
     --lightPurple: #9900ff;
     --darkPurple: #c6a4e093;
@@ -41,12 +42,12 @@ body {
     width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: var(--lighterAccent);
+    background-color: var(--darkerAccent);
     display: flex;
 }
 
 body::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
 }
 
 body::-webkit-scrollbar-track {
@@ -58,19 +59,27 @@ body::-webkit-scrollbar-thumb {
     border-radius: 6px;
 }
 
-#sidebar {
-    padding: 20px 0px 40px 0px;
-    min-width: var(--sideBarWidthPix);
+#sidebarSection{
     position: fixed;
     z-index: 2;
     height: 100vh;
-    width: var(--sideBarWidthPer);
+    width: clamp(var(--sideBarWidthPix),var(--sideBarWidthPix),var(--sideBarWidthPix));
     background-color: var(--darkerAccent);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    justify-content: center;
 
+}
+
+#sidebarInner{
+    background-color: var(--lighterAccent);
+    padding:10px;
+    height: 100%;
+    width:60px;
+    margin:10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
 }
 
 .sidebarBtn {
@@ -92,25 +101,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 #primeBtn {
-    border: 1px solid var(--border);
-    border-top: 1px solid var(--lighterAccent);
-    border-right: 1px solid var(--lighterAccent);
-
-    background-color: var(--lighterAccent);
-    border-radius: 10px 0px 0px 10px;
+    color: var(--text);
 }
 
 figure {
     width: 100%;
-    height: 60px;
+    aspect-ratio: 186/149;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 
 }
 
 #logo {
     margin-right: 5px;
-    width: 60%;
+    width: 70%;
     aspect-ratio: 186/149;
     background-image: url("images/logo.png");
     background-repeat: no-repeat;
@@ -142,14 +147,20 @@ figure {
         transform: rotate(0deg);
     }
 }
-
+.sidebarRemContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 85%;
+}
 .sidebarBtnContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
     width: 100%;
-    height: fit-content
+    height:100%;
 }
 
 .sidebarIcon {
@@ -158,15 +169,28 @@ figure {
 }
 
 content {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left:var(--sideBarWidthPix);
+    margin-right:12px;
+    width: calc(100% - var(--sideBarWidthPix) - 12px);
+    min-height: 100vh;
+    height: fit-content;
+}
+#innerContent{
+    margin: 10px 12px 10px 0px;
     min-width: 800px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: var(--sideBarWidthPer);
-    width: calc(100% - var(--sideBarWidthPer));
-    min-height: 100vh;
+    width: 100%;
+    min-height: 100vh; 
     height: fit-content;
 }
 
@@ -177,35 +201,36 @@ content {
     z-index: 3;
     position: fixed;
     display: flex;
-    height: 80px;
+    height: 70px;
     width: fit-content;
-    background-color: var(--lighterAccent);
+    background-color: #00000073;
+    backdrop-filter: blur(5px);
     border-radius: 0px 0px 25px 25px;
-    border: 1px solid var(--border);
-    padding: 20px;
+   
+    padding: 10px;
 }
 
 #searchbarSection {
     display: flex;
     width: 450px;
+    min-width:100px;
     height: 40px;
-    background-color: var(--lighterAccent);
     border: 1px solid var(--border);
     border-radius: 20px;
     overflow: hidden;
 }
 
 #searchInput {
+    display: flex;
     font-weight: 400;
     height: 100%;
     width: 90%;
     outline: none;
     font-family: "Ubuntu", serif;
-    background-color: transparent;
     border: none;
     padding: 0px 20px;
     font-size: 1rem;
-    background-color: var(--darkerAccent);
+    background-color: var(--lighterAccent);
     color: white;
 }
 
@@ -216,9 +241,9 @@ content {
 #searchbarSection button {
     height: 100%;
     width: 10%;
-    background-color: var(--darkPurple);
+    background-color: var(--lighterAccent);
     border: none;
-    color: var(--lightPurple);
+    color: var(--unselectedText);
     padding: 0px 10px;
     font-size: 1rem;
 }
@@ -226,24 +251,10 @@ content {
 
 #searchbarSection button:hover {
     background-color: var(--lightPurple);
-    color: var(--lighterAccent);
+    color: var(--darkerAccent);
 }
 
-#createBtn {
-    height: 100%;
-    font-weight: 900;
-    background-image: linear-gradient(to right, var(--violet), var(--lightPurple));
-    color: white;
-    margin-left: 30px;
-    font-family: "Ubuntu", serif;
-    font-size: 0.9rem;
-    border-radius: 20px;
-    padding: 0px 10px;
-    border: none;
-    box-shadow: 0px 0px 20px #ffffff55;
-    border: 1px solid var(--darkPurple);
-    transition: 2s ease;
-}
+
 
 #videoUploadContainer {
     position: absolute;
@@ -261,7 +272,7 @@ content {
     border-radius: 25px;
     width: 80%;
     height: 85%;
-    background-color: var(--darkerAccent);
+    background-color: var(--lighterAccent);
     border: 1px solid var(--border);
 
 }
@@ -308,8 +319,8 @@ content {
 
 #uploadRegion{
     display: flex;
-    background-color: var(--evenLighterAccent);
-    color: var(--darkerAccent);
+    background-color: var(--evendarkerAccent);
+    color: var(--lighterAccent);
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
@@ -321,7 +332,7 @@ content {
 }
 
 #uploadRegion i{
- color: var(--darkerAccent);
+ color: var(--lighterAccent);
   animation: downloadAnimation 4s linear infinite; 
 }
 @keyframes downloadAnimation{
@@ -351,7 +362,7 @@ content {
 
 #selectFileBtn {
     margin-top:20px;
-    background-color: var(--evenLighterAccent);
+    background-color: var(--evendarkerAccent);
     color: var(--text);
     font-size: 1.1rem;
     border: none;
@@ -387,8 +398,8 @@ content {
     font-size: 1rem;
     outline: none;
     padding:5px 10px;
-    background-color: var(--lighterAccent);
-    border: 2px solid var(--evenLighterAccent);
+    background-color: var(--darkerAccent);
+    border: 2px solid var(--evendarkerAccent);
 }
 
 #addVideoBtn{
@@ -398,44 +409,57 @@ content {
     font-size: 1.1rem;
     border: none;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 25px;
 }
-
 
 #adboardOuter {
     border: none;
     display: flex;
     justify-content: center;
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 12px;
     width: 100%;
-    height: 100%;
+    height:100%;
     background-color: rgb(129, 129, 129);
     background-image: url("images/advertise1.png");
-
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 0px 15px var(--shadowHintPurple);
+}
+
+#blurOverlay{
+    width: 100%;
+    height:100%; 
+    backdrop-filter: blur(20px);
+    background-color: #1e1e1e8f;
+    padding:50px;
 }
 
 #adboardSection {
     display: flex;
     justify-content: center;
-    width: 95%;
-    padding: 20px 0px 0px 0px;
-    height: 300px;
-    background-color: transparent;
+    align-items: center;
+    background-color: var(--lighterAccent);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom:10px;
+    background-image: url("images/advertise1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #filter {
     display: flex;
     align-items: center;
-    padding: 40px 0px 40px 0px;
-    width: 95%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 20px 0px 20px 30px;
+    width: 100%;
+    margin: 10px 0px;
     height: 60px;
     background-color: transparent;
-
+    background-color: var(--lighterAccent);
+    border: 1px solid var(--border);
+    border-radius: 10px;
 }
 
 #filter button {
@@ -455,18 +479,21 @@ content {
 
 #filter button:hover {
     background-color: var(--lightPurple);
-    color: var(--lighterAccent);
+    color: var(--darkerAccent);
 }
 
 #mainVideoContainer {
-    width: 95%;
-    padding: 20px 0px 0px 0px;
+    width: 100%;
+    padding: 20px 30px 0px 30px;
     height: fit-content;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
     background-color: transparent;
+    background-color: var(--lighterAccent);
+    border: 1px solid var(--border);
+    border-radius: 5px;
 }
 
 
