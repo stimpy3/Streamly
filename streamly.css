@@ -272,7 +272,7 @@ content {
     border-radius: 25px;
     width: 80%;
     height: 85%;
-    background-color: var(--lighterAccent);
+    background-color: var(--darkerAccent);
     border: 1px solid var(--border);
 
 }
@@ -295,10 +295,12 @@ content {
     align-items: center;
     color: var(--text);
     border-bottom: 2px solid var(--lightPurple);
+    
 }
 
 #uploadTopbar p {
     height: fit-content;
+  
 }
 
 #bottomPart{
@@ -332,7 +334,7 @@ content {
 }
 
 #uploadRegion i{
- color: var(--lighterAccent);
+ color: var(--darkerAccent);
   animation: downloadAnimation 4s linear infinite; 
 }
 @keyframes downloadAnimation{
