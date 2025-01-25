@@ -92,21 +92,25 @@
                     </div>
                     <div id="instructionUploadContainer">
                         <p>Drag and drop video files to upload</p>
-                        <button id="selectFilesBtn" onclick="selectFile()">Select
+                        <button id="selectFileBtn">Select
                             file</button>
+                        <!--hidden file input -->
+                         <input type="file" id="fileInput" accept="video/mp4" style="display: none;">
                     </div>
                 </section>
 
                 <section id="videoDescriptionContainer">
                    <div class="descriptionInputContainer">
                      <label>Video Title</label>
-                     <input type="textarea" id="videoTitleInputTag" class="videoInput">
+                     <input type="textarea" id="videoTitleInputTag" class="videoInput" autocomplete="off">
                    </div>
 
                    <div class="descriptionInputContainer" class="videoInput">
                     <label>Video Description</label>
-                    <input type="textarea" id="videoDescription">
+                    <input type="textarea" id="videoDescription" autocomplete="off">
                   </div>
+
+                  <button class="videoInput" id="addVideoBtn" onclick="addVideo()">Add</button>
                 </section>
 
                </section>

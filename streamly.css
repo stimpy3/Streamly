@@ -262,6 +262,7 @@ content {
     width: 80%;
     height: 85%;
     background-color: var(--darkerAccent);
+    border: 1px solid var(--border);
 
 }
 
@@ -282,7 +283,7 @@ content {
     display: flex;
     align-items: center;
     color: var(--text);
-    border-bottom: 1px solid var(--lightPurple);
+    border-bottom: 2px solid var(--lightPurple);
 }
 
 #uploadTopbar p {
@@ -321,7 +322,7 @@ content {
 
 #uploadRegion i{
  color: var(--darkerAccent);
-  animation: downloadAnimation 3s linear infinite; 
+  animation: downloadAnimation 4s linear infinite; 
 }
 @keyframes downloadAnimation{
     0%{
@@ -331,7 +332,7 @@ content {
         transform: translateY(0px);
     }
     100%{
-        transform: translateY(-200px);
+        transform: translateY(-300px);
     }
 }
 
@@ -348,7 +349,7 @@ content {
     color: var(--text);
 }
 
-#selectFilesBtn {
+#selectFileBtn {
     margin-top:20px;
     background-color: var(--evenLighterAccent);
     color: var(--text);
@@ -389,6 +390,17 @@ content {
     background-color: var(--lighterAccent);
     border: 2px solid var(--evenLighterAccent);
 }
+
+#addVideoBtn{
+    margin-top:20px;
+    background-color: var(--lightPurple);
+    color: var(--text);
+    font-size: 1.1rem;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
 
 #adboardOuter {
     border: none;

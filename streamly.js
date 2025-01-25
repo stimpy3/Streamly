@@ -1,11 +1,20 @@
 const createBtn = document.querySelector('#createBtn');
-videoTitleInputTag=document.querySelector("#videoTitleInputTag");
-videoDescriptionInputTag=document.querySelector("#videoDescription");
-videoInput=document.querySelectorAll(".videoInput");
+const videoTitleInputTag=document.querySelector("#videoTitleInputTag");
+const videoDescriptionInputTag=document.querySelector("#videoDescription");
+const videoInput=document.querySelectorAll(".videoInput");
 const videoUploadContainer = document.querySelector("#videoUploadContainer");
-videoUploadScreen=document.querySelector("#videoUploadScreen");
+const videoUploadScreen=document.querySelector("#videoUploadScreen");
 const searchInput = document.querySelector('#searchInput');
 const appearanceBtn = document.querySelector("#appearanceBtn");
+const videoContainer=document.querySelector("#videoContainer");
+const mainVideoContainer=document.querySelector("#mainVideoContainer");
+const selectFileBtn = document.querySelector("#selectFileBtn");
+const fileInput = document.querySelector("#fileInput");
+const addVideoBtn=document.querySelector("#addVideoBtn");
+const videoPlayer = document.querySelector("#videoPlayer");
+const videoSource = document.querySelector("#videoSource");
+
+
 
 createBtn.addEventListener('mouseenter', () => {
     createBtn.innerHTML = '<i class="fa-solid fa-video"></i> Video';
@@ -18,19 +27,14 @@ createBtn.addEventListener('mouseleave', () => {
 
 
 
-//reload on logo click
+//scroll to top on logo click
 logo.addEventListener("click", reload);
 function reload() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 
-//views formatter K for thousand and M for million
-views = 4280;
-if (views > 999 && views <= 999999) { viewsString = ((views / 1000).toFixed(1)) + "k"; } //toFixed method return a string
-else if (views >= 999999) {
-    viewsString = (views / 1000000) + "M";
-}
+
 
 
 //IMPORTANT
@@ -61,17 +65,62 @@ videoUploadContainer.addEventListener("click", (e) => {
     }
 });
 
-//////////////////////////////////////////////////////////
 //video upload
-let videoTitle;
+// Add event listener to the button
+selectFileBtn.addEventListener("click", () => {
+  fileInput.click(); // Trigger the file input's click event
+});
+
+/*event.target.files:
+
+The files property is an array-like object that contains all the files selected by the user through
+ the file input. Even though users can only select one file at a time if the multiple attribute isn't
+  set, files is still an array-like object.
+This property contains all the files the user selected, but in most cases, it's an array with just 
+one file, since the user usually picks one file.
+event.target.files[0]:
+
+files[0] accesses the first file (in this case, the only file) from the files array-like object.
+ If the user selects multiple files, files[0] will give you the first file selected, files[1] 
+ will give the second file, and so on. */
+ let videoURL = null;
+fileInput.addEventListener("change", (event) => {
+  const selectedFile = event.target.files[0];
+  console.log(selectedFile);
+  if (selectedFile) { 
+ 
+    videoURL = URL.createObjectURL(selectedFile);
+    console.log(videoURL);
+    console.log("Selected file:", selectedFile.name);
+    // You can perform any actions with the selected file here
+  }
+  else {
+    alert("Please select a valid MP4 video file.");
+  }
+});
 
 
+vidNum=0;
 
-function selectFile(){
-   videoTitle=(document.querySelector("#videoTitleInputTag")).value;
-    addVideo();
-    removeOverlay();
-}
+function addVideo(){
+    videoTitle=videoTitleInputTag.value;
+    document.querySelector("#mainVideoContainer").innerHTML += `<article style=" box-shadow: 0px 0px 15px var(--shadowHintPurple);border-radius:10px; overflow:hidden;background-color: var(--darkerAccent); height: 300px; min-width:400px;"
+    id="${vidNum}" class="videoContainer">
+       <video id="videoPlayer${vidNum}" width="640" height="360" controls style="width: 100%; height: 75%; background-color: var(--border);">
+           <source id="videoSource${vidNum}" src="${videoURL}" type="video/mp4">
+      </video>
+       <section style="color:var(--text);  padding: 10px 15px;height: 25%;"><p><i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;${videoTitle}</p>
+       <div style="display:flex; justify-content:space-between;margin-top:7px;">
+      <p style="color:var(--text); width:fit-content;">Channel name</p> <p id="vid${vidNum}view" style="color:var(--lightPurple); width:fit-content;">${viewsString}</p>
+       </div>
+       </section>
+   </article>`;
+   vidNum++;
+  
+   fileInput.value = ""; // Clear the file input
+   removeOverlay();
+
+};
 
 
 
@@ -83,22 +132,40 @@ function removeOverlay() {
     videoUploadContainer.style.top = `${window.scrollY}px`;
 }
 
+//views formatter K for thousand and M for million
+views =0;
+viewsString=  "No views";
+function viewsFormater(){
+  views++;
+if(views==0){
+  viewsString=  "No views";
+  return viewsString;
+}
+else if(views==1){
+  viewsString=views+" view";
+  return viewsString;
+}
+ else if (views > 999 && views <= 999999)
+  {viewsString=((views/1000).toFixed(1)) + "K "+"views";
+    return viewsString;
+   } //toFixed method return a string
+else if (views >= 999999) {
+    viewsString = (views / 1000000) + "M "+"views";
+    return viewsString;
+}
+else{
+  viewsString=views+" views";
+  return viewsString;
+}
+}
 
-vidNum=0;
-addVideo=()=>{
-    document.querySelector("#mainVideoContainer").innerHTML += `<article style=" box-shadow: 0px 0px 15px var(--shadowHintPurple);border-radius:10px; overflow:hidden;background-color: var(--darkerAccent); height: 300px;"
-    id="${vidNum++}" class="videoContainer">
-       <div style="width: 100%; height: 75%; background-color: var(--darkerAccent);background-image: url('images/thumbnail.png'); background-size: contain; background-repeat: no-repeat;">
-      
-      </div>
-       <section style="color:var(--text);  padding: 10px 15px;height: 25%;"><p><i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;${videoTitle}</p>
-       <div style="display:flex; justify-content:space-between;margin-top:7px;">
-      <p style="color:var(--text); width:fit-content;">Channel name</p> <p style="color:var(--lightPurple); width:fit-content;">${viewsString} Views</p>
-       </div>
-       </section>
-   </article>`;
-};
+mainVideoContainer.addEventListener("click",(e)=>{
+  id=e.target.closest(".videoContainer").id;//finds the closest ancestor to the target named as mentioned
+  str=`#vid${id}view`;
+  document.querySelector(str).innerText=viewsFormater();
+  console.log(str);
 
+});
 
 
 
