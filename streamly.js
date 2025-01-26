@@ -13,9 +13,17 @@ const fileInput = document.querySelector("#fileInput");
 const addVideoBtn=document.querySelector("#addVideoBtn");
 const videoPlayer = document.querySelector("#videoPlayer");
 const videoSource = document.querySelector("#videoSource");
+const adboardOuter= document.querySelector("#adboardOuter");
+const adboardSection=document.querySelector("#adboardSection");
 
-
-
+let c=0;
+function changeAdvertise(){
+c%=3;
+c++;
+adboardOuter.style.backgroundImage=`url("images/advertise${c}.png")`;
+adboardSection.style.backgroundImage=`url("images/advertise${c}.png")`;
+}
+setInterval(changeAdvertise,5000);
 
 
 //scroll to top on logo click
@@ -176,13 +184,13 @@ toggleMode = () => {
     if (currentMode == "dark") {
         currentMode = "light";
         root.classList.add("lightTheme");
-        appearanceBtn.innerHTML = `<i class="fa-solid fa-sun sidebarIcon"></i><div class="ab">Appearance</div>`;
+        appearanceBtn.innerHTML = `<i class="fa-solid fa-sun sidebarIcon"></i><div class="ab">Lighting</div>`;
         console.log(currentMode);
     }
     else if (currentMode == "light") {
         currentMode = "dark";
         root.classList.remove("lightTheme");
-        appearanceBtn.innerHTML = `<i class="fa-solid fa-moon sidebarIcon"></i><div class="ab">Appearance</div>`;
+        appearanceBtn.innerHTML = `<i class="fa-solid fa-moon sidebarIcon"></i><div class="ab">Lighting</div>`;
 
         console.log(currentMode);
     }

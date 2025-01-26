@@ -79,7 +79,7 @@ body::-webkit-scrollbar-thumb {
     width:60px;
     margin:10px;
     border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .sidebarBtn {
@@ -169,27 +169,26 @@ figure {
 }
 
 content {
-    
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left:var(--sideBarWidthPix);
-    margin-right:12px;
+    margin-right:0px;
     width: calc(100% - var(--sideBarWidthPix) - 12px);
     min-height: 100vh;
     height: fit-content;
 }
 #innerContent{
-    margin: 10px 12px 10px 0px;
+    margin:10px 10px 10px 0px;
     min-width: 800px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 10px);
     min-height: 100vh; 
     height: fit-content;
 }
@@ -203,10 +202,10 @@ content {
     display: flex;
     height: 70px;
     width: fit-content;
-    background-color: #00000073;
+    background-color: #31313173;
     backdrop-filter: blur(5px);
     border-radius: 0px 0px 25px 25px;
-   
+    border: 1px solid var(--border);
     padding: 10px;
 }
 
@@ -230,7 +229,7 @@ content {
     border: none;
     padding: 0px 20px;
     font-size: 1rem;
-    background-color: var(--lighterAccent);
+    background-color: #1b1b1bb5;
     color: white;
 }
 
@@ -241,8 +240,8 @@ content {
 #searchbarSection button {
     height: 100%;
     width: 10%;
-    background-color: var(--lighterAccent);
-    border: none;
+    background-color: #1b1b1bb5;
+    border:none;
     color: var(--unselectedText);
     padding: 0px 10px;
     font-size: 1rem;
@@ -250,8 +249,8 @@ content {
 
 
 #searchbarSection button:hover {
-    background-color: var(--lightPurple);
-    color: var(--darkerAccent);
+   
+    color: var(--text);
 }
 
 
@@ -441,7 +440,7 @@ content {
     align-items: center;
     background-color: var(--lighterAccent);
     border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: 10px;
     width: 100%;
     height: 400px;
     overflow: hidden;
@@ -495,7 +494,7 @@ content {
     background-color: transparent;
     background-color: var(--lighterAccent);
     border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 
