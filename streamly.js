@@ -195,3 +195,4 @@ toggleMode = () => {
         console.log(currentMode);
     }
 }
+
